@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f3529376650bf55d7dc46368890be846 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f3529376650bf55d7dc46368890be846" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f3529376650bf55d7dc46368890be846 = L.map(
+                "map_f3529376650bf55d7dc46368890be846",
+                {
+                    center: [37.5591207, 126.9674944],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c9c9c21621c257c54a60bb6192aac5ff = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c9c9c21621c257c54a60bb6192aac5ff.addTo(map_f3529376650bf55d7dc46368890be846);
+        
+    
+            var poly_line_7cdc62457cefd3be5b1c2b23d722241a = L.polyline(
+                [[37.55882856871026, 126.96737837212498], [37.55865006636188, 126.96738994885027], [37.5584258012907, 126.96743029263264], [37.558448703253134, 126.96749065175267], [37.5585014371117, 126.96784709418706], [37.55851980777561, 126.96807706399188], [37.558517558791955, 126.96822367572987], [37.55851760585636, 126.96839903370008], [37.55851993660069, 126.96855714238403], [37.55885635851817, 126.9685857483579], [37.55902806168577, 126.96882427975503], [37.55921566343893, 126.96860572074564], [37.559398804664205, 126.96882700004079], [37.55943772790661, 126.96889597798095], [37.559543005683395, 126.96891605754156], [37.55955677010924, 126.96904254131096], [37.55958887038362, 126.96927538377736], [37.55997787656479, 126.96910561218236], [37.560103723975125, 126.96902219153928], [37.56052929949003, 126.96867560213023], [37.56090457738834, 126.96852020512279], [37.56133583120291, 126.96831792201115], [37.56147211323336, 126.96844522063513], [37.561485868972355, 126.96853720955994]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_f3529376650bf55d7dc46368890be846);
+        
+    
+            var marker_e345d84a18a3515fc17f6eaeff6d7ffa = L.marker(
+                [37.5591207, 126.9674944],
+                {
+}
+            ).addTo(map_f3529376650bf55d7dc46368890be846);
+        
+    
+            var icon_18661f186e9873e6531beda58b836e74 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0f1473c8d38dfece3152f02e66d57cf5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_03f8303261f0c40b5aa0d924743dcac7 = $(`<div id="html_03f8303261f0c40b5aa0d924743dcac7" style="width: 100.0%; height: 100.0%;">약현성당</div>`)[0];
+                popup_0f1473c8d38dfece3152f02e66d57cf5.setContent(html_03f8303261f0c40b5aa0d924743dcac7);
+            
+        
+
+        marker_e345d84a18a3515fc17f6eaeff6d7ffa.bindPopup(popup_0f1473c8d38dfece3152f02e66d57cf5)
+        ;
+
+        
+    
+    
+                marker_e345d84a18a3515fc17f6eaeff6d7ffa.setIcon(icon_18661f186e9873e6531beda58b836e74);
+            
+    
+            var marker_d8e232d7d448155e8123a5cf0d90a332 = L.marker(
+                [37.5615986, 126.9685038],
+                {
+}
+            ).addTo(map_f3529376650bf55d7dc46368890be846);
+        
+    
+            var icon_3186cc09f5692825fcb43e7efb9024a0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2e0701806f6272fef7568756363b1db9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d7df7db121a17053df6ad3757cc313fb = $(`<div id="html_d7df7db121a17053df6ad3757cc313fb" style="width: 100.0%; height: 100.0%;">서소문 역사공원</div>`)[0];
+                popup_2e0701806f6272fef7568756363b1db9.setContent(html_d7df7db121a17053df6ad3757cc313fb);
+            
+        
+
+        marker_d8e232d7d448155e8123a5cf0d90a332.bindPopup(popup_2e0701806f6272fef7568756363b1db9)
+        ;
+
+        
+    
+    
+                marker_d8e232d7d448155e8123a5cf0d90a332.setIcon(icon_3186cc09f5692825fcb43e7efb9024a0);
+            
+    
+            var poly_line_3e6105c8f8d5545f6bea573721df803b = L.polyline(
+                [[37.5591207, 126.9674944], [37.55882856871026, 126.96737837212498]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": "5,10", "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_f3529376650bf55d7dc46368890be846);
+        
+    
+            var poly_line_5cbe3f5f4b035e2fc9992dc0bfc13f92 = L.polyline(
+                [[37.5615986, 126.9685038], [37.561485868972355, 126.96853720955994]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": "5,10", "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_f3529376650bf55d7dc46368890be846);
+        
+</script>
+</html>
