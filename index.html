@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>경로 선택</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        />
+        <style>
+            body {
+                background: #f6f7f9;
+            }
+            .main-wrap {
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            h1 {
+                color: #2d4739;
+                font-weight: 600;
+                margin-bottom: 2.5rem;
+            }
+            .dropdown {
+                width: 100%;
+                max-width: 420px;
+            }
+            .custom-route-btn {
+                width: 100%;
+                padding: 1rem 2rem;
+                font-size: 1.25rem;
+                background: #495057;
+                color: #fff;
+                border: none;
+                border-radius: 2rem;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            }
+            .custom-list-btn {
+                width: 100%;
+                max-width: 120px;
+                padding: 0.8rem 0.5rem;
+                font-size: 0.98rem;
+                background: #495057;
+                color: #fff;
+                border: none;
+                border-radius: 2rem;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+                margin-top: 1.2rem;
+                transition: background 0.2s, color 0.2s;
+            }
+            .custom-list-btn:hover,
+            .custom-list-btn:focus {
+                background: #343a40;
+                color: #ffd700;
+            }
+
+            .custom-dropdown-menu {
+                width: 100%;
+                border-radius: 2rem;
+                background: #495057;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                overflow: hidden;
+                margin-top: 0;
+                border-top: none;
+            }
+            .custom-route-btn:hover,
+            .custom-route-btn:focus,
+            .custom-route-btn:active {
+                background: #495057;
+                color: #fff;
+                box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+            }
+            .custom-dropdown-item {
+                color: #fff;
+                font-size: 1.15rem;
+                padding: 1rem 0.5rem;
+                background: transparent;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                transition: background 0.2s, color 0.2s;
+            }
+            .custom-dropdown-item.disabled {
+                opacity: 0.5;
+                pointer-events: auto;
+                cursor: not-allowed;
+            }
+            .custom-dropdown-item:last-child {
+                border-bottom: none;
+            }
+            .custom-dropdown-item:hover,
+            .custom-dropdown-item:focus {
+                background: #343a40;
+                color: #ffd700;
+            }
+            .custom-dropdown-item.disabled:hover,
+            .custom-dropdown-item.disabled:focus,
+            .custom-dropdown-item.disabled:active {
+                background: transparent !important;
+                color: #fff !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main-wrap">
+            <h1>어디로 걸어볼까요?</h1>
+            <div class="dropdown">
+                <button
+                    class="btn dropdown-toggle custom-route-btn"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                >
+                    중구
+                </button>
+                <ul
+                    class="dropdown-menu custom-dropdown-menu p-0 border-0"
+                    aria-labelledby="dropdownMenuButton"
+                >
+                    <li>
+                        <a class="dropdown-item custom-dropdown-item" href="#"
+                            >중구</a
+                        >
+                    </li>
+                    <li>
+                        <a class="dropdown-item custom-dropdown-item" href="#"
+                            >종로구</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            class="dropdown-item custom-dropdown-item disabled"
+                            href="#"
+                            tabindex="-1"
+                            aria-disabled="true"
+                            style="pointer-events: auto; opacity: 0.5"
+                            id="gwangjin-item"
+                            >광진구</a
+                        >
+                    </li>
+                </ul>
+            </div>
+            <button
+                class="btn custom-list-btn mt-4"
+                id="go-to-list-btn"
+            >
+                길 보기
+            </button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // 광진구(비활성)는 클릭해도 아무 일도 안 일어남
+            document
+                .getElementById("gwangjin-item")
+                .addEventListener("click", function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                });
+            // 중구, 종로구 클릭 시 버튼 텍스트 변경
+            document
+                .querySelectorAll(".custom-dropdown-item:not(.disabled)")
+                .forEach(function (item) {
+                    item.addEventListener("click", function (e) {
+                        document.getElementById(
+                            "dropdownMenuButton"
+                        ).textContent = this.textContent;
+                    });
+                });
+            // 길 보기 버튼 클릭 시 구에 따라 이동
+            document.getElementById("go-to-list-btn").addEventListener("click", function () {
+                const selectedGu = document.getElementById("dropdownMenuButton").textContent.trim();
+                if (selectedGu === "중구") {
+                    location.href = "lists/jung-gu.html";
+                } else if (selectedGu === "종로구") {
+                    location.href = "lists/Jongno-gu.html";
+                } else {
+                    // 다른 구 또는 선택되지 않은 경우 기본 동작 (필요시 수정)
+                    alert("구를 선택해주세요.");
+                }
+            });
+        </script>
+    </body>
+</html>
